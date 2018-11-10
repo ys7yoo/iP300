@@ -5,5 +5,8 @@
   * mask data format: (num channels)x1
 2. Put the data in `data` folder
   * make a symbolic link to your data folder
+  ```
+  ln -s ../P300_ensembleSVM/data ./data
+  ```
 3. Train & test using various classifiers (mainly from sci-kit learn, few from Tensorflow)
 
