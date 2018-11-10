@@ -3,7 +3,7 @@
 1. Prepare ERP data with channel masks.
   * EEG data format: (num trirals)x(num channels)x(samples)
   * mask data format: (num channels)x1
-2. Put the data in `data` folder
+2. Put preprocessed data in `data` folder
   * make a symbolic link to your data folder
   ```
   ln -s ../P300_ensembleSVM/data ./data
