@@ -4,5 +4,5 @@
 2. Put the data in `data` folder
   * EEG data format: (num trirals)x(num channels)x(samples)
   * mask data format: (num channels)x1
-3. Train & test using various classifiers (mainly from sci-kit, few from Tensorflow)
+3. Train & test using various classifiers (mainly from sci-kit learn, few from Tensorflow)
 
