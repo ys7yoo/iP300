@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# coding: utf-8
 
 import numpy as np
 from scipy.io import loadmat
@@ -30,20 +29,18 @@ if len(sys.argv) < 2:
     print ('choose training dataset (A, B, AandB)')
     exit()
 
-subject_train = sys.argv[1]
+subject_train = str(sys.argv[1]).strip()
 print(subject_train)
 
 
-
-# ## k-nearest neighbor classifier
-
+## load training data
 
 #subject_train = 'A'
 #subject_train = 'B'
 #subject_test = 'A'
 #subject_test = 'B'
 
-if subject_train is 'AandB':
+if subject_train == 'AandB':
     subject = 'A'
     X_train_A, Y_train_A, Code_train_A = load_data(subject, 'train', 85)
     #X_test_A, Y_test_A, Code_test_A = load_data(subject, 'test', 100)
@@ -69,6 +66,8 @@ else:
 
 
 
+## cross validation for kNN classifier
+
 
 n_neighbors = np.arange(3, 10, 1, dtype=int)
 #n_neighbors = np.int(np.linspace(3, 10, 8))
@@ -83,5 +82,6 @@ clf_cv.fit(X_train, Y_train)
 
 # save model
 subject = 'AandB'
-joblib.dump(clf_cv, "{}_kNN_cv.model".format(subject_train,))
+num_ch = 64
+joblib.dump(clf_cv, "{}_kNN_cv_ch{}.model".format(subject_train,num_ch))
 
