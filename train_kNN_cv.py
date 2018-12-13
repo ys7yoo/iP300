@@ -7,8 +7,6 @@
 import numpy as np
 from scipy.io import loadmat
 
-import matplotlib.pyplot as plt
-get_ipython().run_line_magic('matplotlib', 'inline')
 
 # cross validation using grid search
 from sklearn.model_selection import GridSearchCV
@@ -37,8 +35,10 @@ from P300.data import load_data
 # In[2]:
 
 
-subject_train = 'A'
-subject_test = 'A'
+#subject_train = 'A'
+subject_train = 'B'
+#subject_test = 'A'
+subject_test = 'B'
 X_train, Y_train, Code_train = load_data(subject_train, 'train', 85)
 X_test, Y_test, Code_test = load_data(subject_test, 'test', 100)
 
