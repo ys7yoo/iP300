@@ -69,10 +69,9 @@ else:
 ## cross validation for kNN classifier
 
 
-n_neighbors = np.arange(3, 10, 1, dtype=int)
-#n_neighbors = np.int(np.linspace(3, 10, 8))
-print(n_neighbors)
-parameters = { 'n_neighbors':n_neighbors}
+k = np.arange(3, 16, 1, dtype=int)
+print(k)
+parameters = {'n_neighbors':k}
 
 clf = KNeighborsClassifier(n_jobs=-1)
 
@@ -81,7 +80,6 @@ clf_cv.fit(X_train, Y_train)
 
 
 # save model
-subject = 'AandB'
 num_ch = 64
 joblib.dump(clf_cv, "{}_kNN_cv_ch{}.model".format(subject_train,num_ch))
 
