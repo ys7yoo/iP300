@@ -69,7 +69,7 @@ else:
 ## cross validation for kNN classifier
 
 
-k = np.arange(3, 16, 2, dtype=int)
+k = np.arange(3, 32, 2, dtype=int)
 print(k)
 parameters = {'n_neighbors':k}
 
